@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover" />
+  <title>Pesat Land Property - Portal Kavling & Properti Investasi Terbaik</title>
+  <meta name="description"
+    content="Temukan tanah kavling strategis, rumah modern, ruko komersial, dan villa idaman bersama Pesat Land Property." />
+  <!-- Redirect to ensure trailing slash for relative assets resolution -->
+  <script>
+    if (window.location.pathname.endsWith('/frontend')) {
+      window.location.replace(window.location.pathname + '/');
+    }
+  </script>
+
+  <!-- CSS Stylesheet -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+
+<body>
+
+  <!-- Top Navigation Bar -->
+  <nav class="navbar">
+    <div class="container nav-container">
+      <a href="#" class="brand-logo">
+        <img src="assets/images/logo.png" alt="Pesat Land Property Logo" class="logo-img" />
+        <span>Pesat <span>Land Property</span></span>
+      </a>
+
+      <!-- Mobile Hamburger Toggle Button -->
+      <button id="navToggle" class="nav-toggle" aria-label="Toggle Menu Navigasi" onclick="toggleMobileNav()">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#hero" class="nav-link" onclick="closeMobileNav()">Beranda</a></li>
+        <li><a href="#properti" class="nav-link" onclick="closeMobileNav()">Properti</a></li>
+        <li><a href="#layanan" class="nav-link" onclick="closeMobileNav()">About Us</a></li>
+        <li><a href="#kontak" class="nav-link" onclick="closeMobileNav()">Hubungi Kami</a></li>
+      </ul>
+
+      <div style="display: flex; gap: 0.75rem; align-items: center;">
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header id="hero" class="hero-luxury">
+    <div class="hero-luxury-overlay"></div>
+    <div class="container hero-luxury-content">
+      <h1 class="hero-luxury-title">
+        Temukan Properti Impian Anda<br />Bersama Pesat Land Property
+      </h1>
+      <p class="hero-luxury-subtitle">
+        Menghadirkan harmoni antara desain modern dan kenyamanan hunian eksklusif di lokasi paling strategis.
+      </p>
+      <div>
+        <a href="#properti" class="btn-hero-gold">Lihat Properti</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Filter & Search Floating Bar -->
+  <section class="container filter-section">
+    <div class="filter-card">
+      <div class="filter-grid">
+        <div class="form-group">
+          <label for="searchInput">Cari Properti / Lokasi</label>
+          <div class="input-wrapper">
+            <input type="text" id="searchInput" class="input-control"
+              placeholder="Ketik lokasi, nama perumahan, atau tanah..." />
+          </div>
+        </div>
+
+        <div>
+          <button class="btn-primary" onclick="applyFilters()"
+            style="width: 100%; height: 46px; justify-content: center;">
+            Filter Properti
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Property Listing Section -->
+  <main id="properti" class="section">
+    <div class="container">
+      <div class="section-header">
+        <div>
+          <div class="section-subtitle">Katalog Eksklusif</div>
+          <h2 class="section-title">Pilihan Properti Pesat Land</h2>
+        </div>
+
+      </div>
+
+      <!-- Dynamic Property Grid Container -->
+      <div id="propertyGrid" class="property-grid">
+        <!-- Rendered dynamically by app.js -->
+      </div>
+    </div>
+  </main>
+
+  <!-- About & Company Values Section -->
+  <section id="layanan" class="about-section">
+    <!-- Header Banner: Tentang Kami -->
+    <div class="about-hero-banner">
+      <div class="about-hero-overlay"></div>
+      <div class="container about-hero-content">
+        <h2 class="about-hero-title">Tentang Kami</h2>
+        <p class="about-hero-subtitle">
+          Membangun kepercayaan melalui integritas dan dedikasi dalam setiap transaksi properti.
+        </p>
+      </div>
+    </div>
+
+    <!-- Visi & Sejarah Kami -->
+    <div class="about-vision-section">
+      <div class="container">
+        <div class="about-vision-grid">
+          <div class="about-vision-text">
+            <h3 class="about-vision-title">Visi & Sejarah Kami</h3>
+            <p class="about-vision-p">
+              Sejak didirikan, Pesat Land Property telah berkomitmen untuk menjadi agen properti terdepan yang tidak hanya menjual bangunan, tetapi juga mewujudkan impian. Perjalanan kami dimulai dengan visi sederhana: memberikan layanan yang transparan, andal, dan berorientasi pada kepuasan klien.
+            </p>
+            <p class="about-vision-p">
+              Kami menggabungkan keahlian pasar lokal dengan standar profesionalisme global. Dengan tim ahli yang berdedikasi, kami menavigasi kompleksitas pasar real estat untuk memastikan setiap klien kami membuat keputusan investasi yang paling tepat dan menguntungkan.
+            </p>
+          </div>
+          <div class="about-vision-media">
+            <img src="assets/images/architecture-model.jpg" alt="Maket Arsitektur Pesat Land Property" class="about-vision-img" loading="lazy" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Nilai Inti Kami -->
+    <div class="about-values-section">
+      <div class="container">
+        <h3 class="about-values-title">Nilai Inti Kami</h3>
+        <div class="about-values-grid">
+          <!-- Card 1 -->
+          <div class="about-value-card">
+            <div class="about-value-icon">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M6 3h12l4 6-10 12L2 9z"></path>
+                <path d="M11 3v6"></path>
+                <path d="M2 9h20"></path>
+              </svg>
+            </div>
+            <h4 class="about-value-name">Kepercayaan</h4>
+            <p class="about-value-desc">
+              Kami membangun hubungan jangka panjang berdasarkan transparansi mutlak dan keandalan di setiap tahap proses.
+            </p>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="about-value-card">
+            <div class="about-value-icon">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                <path d="m9 12 2 2 4-4"></path>
+              </svg>
+            </div>
+            <h4 class="about-value-name">Integritas</h4>
+            <p class="about-value-desc">
+              Tindakan kami selalu dipandu oleh kompas moral yang kuat, memastikan kejujuran dalam setiap negosiasi dan kesepakatan.
+            </p>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="about-value-card">
+            <div class="about-value-icon">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+              </svg>
+            </div>
+            <h4 class="about-value-name">Layanan Unggul</h4>
+            <p class="about-value-desc">
+              Kami berusaha melampaui harapan dengan memberikan pengalaman pelanggan yang tak tertandingi dan dipersonalisasi.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Property Detail Modal -->
+  <div id="detailModal" class="modal-backdrop">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 class="modal-title">Detail Properti</h3>
+        <button class="btn-close" onclick="closeModal('detailModal')" aria-label="Tutup">&times;</button>
+      </div>
+      <div id="detailModalBody" class="modal-body">
+        <!-- Rendered dynamically -->
+      </div>
+      <div class="modal-footer">
+        <button class="btn-secondary" onclick="closeModal('detailModal')">Tutup</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Dedicated Sales Executive Modal (Kehadiran & Konsultasi) -->
+  <div id="salesExecutiveModal" class="modal-backdrop">
+    <div class="modal-card">
+      <div class="modal-header">
+        <div>
+          <h3 class="modal-title">Hubungi Sales Executive</h3>
+          <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.25rem;">
+            Formulir kehadiran & konsultasi langsung bersama Sales Executive Pesat Land Property
+          </p>
+        </div>
+        <button class="btn-close" onclick="closeModal('salesExecutiveModal')" aria-label="Tutup">&times;</button>
+      </div>
+      <form id="salesExecutiveForm">
+        <div class="modal-body">
+          <div class="form-group" style="margin-bottom: 1rem;">
+            <label for="salesExecName">Nama Lengkap / Nama Tamu *</label>
+            <input type="text" id="salesExecName" class="input-control" placeholder="Contoh: Budi Santoso" required />
+          </div>
+
+          <div class="responsive-form-grid-2" style="margin-bottom: 1rem;">
+            <div class="form-group">
+              <label for="salesExecPhone">Nomor Kontak / WhatsApp *</label>
+              <input type="tel" id="salesExecPhone" class="input-control" placeholder="Contoh: 081234567890" required />
+            </div>
+            <div class="form-group">
+              <label for="salesExecEmail">Alamat Email (Opsional)</label>
+              <input type="email" id="salesExecEmail" class="input-control" placeholder="nama@email.com" />
+            </div>
+          </div>
+
+          <div class="responsive-form-grid-2" style="margin-bottom: 1rem;">
+            <div class="form-group">
+              <label for="salesExecPurpose">Keperluan / Kategori Layanan *</label>
+              <select id="salesExecPurpose" class="input-control" required>
+                <option value="Konsultasi Properti & Investasi">Konsultasi Properti & Investasi</option>
+                <option value="Janji Temu / Kehadiran Kantor">Janji Temu / Kehadiran Kantor</option>
+                <option value="Survey Lokasi Bersama Sales">Survey Lokasi Bersama Sales</option>
+                <option value="Simulasi KPR & Skema Pembayaran">Simulasi KPR & Skema Pembayaran</option>
+                <option value="Permintaan Brosur & Price List Lengkap">Permintaan Brosur & Price List Lengkap</option>
+                <option value="Lainnya">Lainnya</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="salesExecSchedule">Rencana Waktu / Tanggal Kehadiran</label>
+              <input type="datetime-local" id="salesExecSchedule" class="input-control" />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="salesExecMessage">Pesan / Catatan Tambahan *</label>
+            <textarea id="salesExecMessage" class="input-control" rows="3"
+              placeholder="Tuliskan pesan, pertanyaan, atau catatan untuk Sales Executive..." required></textarea>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn-secondary" onclick="closeModal('salesExecutiveModal')">Batal</button>
+          <button type="submit" class="btn-primary" style="display: inline-flex; align-items: center; gap: 0.5rem;">
+            <svg style="width: 18px; height: 18px; fill: currentColor;" viewBox="0 0 24 24">
+              <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+            </svg>
+            Kirim ke Sales Executive
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Inquiry Modal -->
+  <div id="inquiryModal" class="modal-backdrop">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 class="modal-title">Konsultasi / Survey Lokasi</h3>
+        <button class="btn-close" onclick="closeModal('inquiryModal')">&times;</button>
+      </div>
+      <form id="inquiryForm">
+        <div class="modal-body">
+          <input type="hidden" id="inquiryPropertyId" />
+          <div id="inquiryPropertyTitle" style="font-weight: 700; color: var(--accent); margin-bottom: 1.25rem;"></div>
+
+          <div class="form-group" style="margin-bottom: 1rem;">
+            <label for="inquiryName">Nama Lengkap *</label>
+            <input type="text" id="inquiryName" class="input-control" placeholder="Masukkan nama Anda" required />
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
+            <div class="form-group">
+              <label for="inquiryPhone">Nomor WhatsApp / HP *</label>
+              <input type="tel" id="inquiryPhone" class="input-control" placeholder="0812xxxx" required />
+            </div>
+            <div class="form-group">
+              <label for="inquiryEmail">Alamat Email</label>
+              <input type="email" id="inquiryEmail" class="input-control" placeholder="email@domain.com" />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="inquiryMessage">Pesan / Pertanyaan *</label>
+            <textarea id="inquiryMessage" class="input-control" rows="4"
+              placeholder="Halo, saya ingin menanyakan ketersediaan dan survey lokasi..." required></textarea>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn-secondary" onclick="closeModal('inquiryModal')">Batal</button>
+          <button type="submit" class="btn-primary">Kirim Pertanyaan</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Add / Edit Property Modal -->
+  <div id="propertyFormModal" class="modal-backdrop">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 id="propertyFormTitle" class="modal-title">Tambah Properti Baru</h3>
+        <button class="btn-close" onclick="closeModal('propertyFormModal')" aria-label="Tutup">&times;</button>
+      </div>
+      <form id="propertyForm">
+        <div class="modal-body">
+          <div class="form-group" style="margin-bottom: 1rem;">
+            <label for="propTitle">Judul Properti *</label>
+            <input type="text" id="propTitle" class="input-control"
+              placeholder="Contoh: Kavling Cluster Pesat Eco Green" required />
+          </div>
+
+          <div class="responsive-form-grid-2" style="margin-bottom: 1rem;">
+            <div class="form-group">
+              <label for="propPrice">Harga (Rp) *</label>
+              <input type="number" id="propPrice" class="input-control" placeholder="350000000" required />
+            </div>
+            <div class="form-group">
+              <label for="propType">Tipe Properti *</label>
+              <select id="propType" class="input-control" required>
+                <option value="Tanah">Tanah Kavling</option>
+                <option value="Rumah">Rumah</option>
+                <option value="Ruko">Ruko</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group" style="margin-bottom: 1rem;">
+            <label for="propLocation">Lokasi / Alamat *</label>
+            <input type="text" id="propLocation" class="input-control" placeholder="Sentul, Bogor" required />
+          </div>
+
+          <div class="responsive-form-grid-4" style="margin-bottom: 1rem;">
+            <div class="form-group">
+              <label for="propLandArea">L. Tanah (m²)</label>
+              <input type="number" id="propLandArea" class="input-control" placeholder="120" />
+            </div>
+            <div class="form-group">
+              <label for="propBuildingArea">L. Bangunan (m²)</label>
+              <input type="number" id="propBuildingArea" class="input-control" placeholder="0" />
+            </div>
+            <div class="form-group">
+              <label for="propBedrooms">K. Tidur</label>
+              <input type="number" id="propBedrooms" class="input-control" placeholder="0" />
+            </div>
+            <div class="form-group">
+              <label for="propBathrooms">K. Mandi</label>
+              <input type="number" id="propBathrooms" class="input-control" placeholder="0" />
+            </div>
+          </div>
+
+          <div class="responsive-form-grid-2" style="margin-bottom: 1rem;">
+            <div class="form-group">
+              <label for="propStatus">Status *</label>
+              <select id="propStatus" class="input-control" required>
+                <option value="Tersedia">Tersedia</option>
+                <option value="Booking">Booking</option>
+                <option value="Terjual">Terjual</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="propImageUrl">URL Gambar Cover</label>
+              <input type="url" id="propImageUrl" class="input-control" placeholder="https://images.unsplash.com/..." />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="propDescription">Deskripsi Lengkap</label>
+            <textarea id="propDescription" class="input-control" rows="3"
+              placeholder="Jelaskan spesifikasi, fasilitas, keunggulan properti..."></textarea>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn-secondary" onclick="closeModal('propertyFormModal')">Batal</button>
+          <button type="submit" class="btn-primary">Simpan Properti</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div id="toastContainer" class="toast-container"></div>
+
+  <!-- Footer -->
+  <footer id="kontak" class="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
+          <img src="assets/images/logo.png" alt="Pesat Land Property Logo"
+            style="width: 48px; height: 48px; object-fit: contain; border-radius: 50%;" />
+          <h3 style="margin: 0; font-size: 1.35rem; color: #ffffff;">Pesat Land Property</h3>
+        </div>
+        <p style="margin-bottom: 1.5rem; line-height: 1.6;">
+          Pengembang dan agen properti terpercaya yang menghadirkan kavling tanah berkualitas, hunian nyaman, dan
+          peluang investasi terbaik di Indonesia.
+        </p>
+        <p style="font-size: 0.85rem; color: #94a3b8; line-height: 1.6;">
+          📍 Jl. Permata Taman Sari IX No.4, Cisaranten Kulon, Kec. Arcamanik, Kota Bandung, Jawa Barat 40293<br />
+          📞 <a href="tel:+6281952960471" style="color: #cbd5e1; text-decoration: underline;">(+62) 819-5296-0471</a>
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Navigasi</h4>
+        <ul>
+          <li><a href="#hero">Beranda</a></li>
+          <li><a href="#properti">Katalog Properti</a></li>
+          <li><a href="#layanan">About Us</a></li>
+          <li><a href="#kontak">Hubungi Kami</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Kategori Properti</h4>
+        <ul>
+          <li><a href="#properti">Tanah Kavling</a></li>
+          <li><a href="#properti">Rumah Minimalis</a></li>
+          <li><a href="#properti">Ruko Komersial</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Jam Operasional</h4>
+        <p style="font-size: 0.9rem; line-height: 1.6; margin-bottom: 1rem;">
+          Senin - Jumat: 08:00 - 17:00 WIB<br />
+          Sabtu - Minggu: 09:00 - 15:00 WIB
+        </p>
+        <button class="btn-primary" onclick="openSalesExecutiveModal()" style="width: 100%; justify-content: center;">
+          Hubungi Sales Executive
+        </button>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <p>&copy; 2026 Pesat Land Property. Hak Cipta Dilindungi Undang-Undang.</p>
+    </div>
+  </footer>
+
+  <!-- Application Logic JS -->
+  <script src="assets/js/app.js"></script>
+</body>
+
+</html>
